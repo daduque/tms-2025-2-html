@@ -1,37 +1,28 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Web inicial</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <link rel="stylesheet" href="./assets/css/normalize.css">
     <link rel="stylesheet" href="./assets/css/style.css">
 </head>
-<body>
+<body class="container">
     <header>
 
-        <nav class="main-menu">
-            <a href="#">Inicio</a>
-            <a href="#">Noticias</a>
-            <a href="#">libros</a>
-            <a href="#">Nosotros</a>
-            <a href="#">Contacto</a>
-        </nav>
+
 
         <h1>Bookstore</h1>
         <p>Este es un sitio web de una tienda de libros, como ejercicio de HTML y CSS para TMS 2025-2</p>
     </header>
 
-    <main>
-
-        <h2>Listado completo de libros</h2>
         
-        <section class="main-section">
-
-            <article class="book-container">
+        <section class="main-section row justify-content-center text-center">
+            <h2 class="w-100">Listado completo de libros</h2>
+            <hr class="mb-5 mx-auto w-75">
+<!-- 
+            <article class="book-container col-12 col-sm-6 col-lg-4">
                 <h3 class="book-container__title"> El principito </h3>
                 <div class="book-container__div">
                     <img class="book-container__image" src="./assets/images/el_alquimista.jpg" alt="Portada del libro el principito" width="200">
@@ -40,107 +31,81 @@
                 <p class="book-container__price"><span>Precio: </span>$10</p>
                 <p class="book-container__author"><span>Autor: </span>Antoine de Saint-Exupéry</p>
                 <p class="book-container__genre"><span>Género: </span>Relato filosófico</p>
-            </article>
-
-            <article class="book-container">
-                <h3 class="book-container__title"> El principito </h3>
-                <div class="book-container__div">
-                    <img class="book-container__image" src="./assets/images/el_alquimista.jpg" alt="Portada del libro el principito" width="200">
+            </article> -->
+            
+            <article class="book-container card col-12 col-sm-6 col-lg-4 mb-3 mx-3 text-md-start">
+                <img src="./assets/images/el_alquimista.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">El principito</h5>
+                    <p class="card-text">
+                        Un relato corto poético y filosófico que, a través de la historia de un pequeño príncipe que viaja por diferentes planetas, ofrece profundas lecciones sobre la vida, el amor, la amistad y la soledad.
+                    </p>
                 </div>
-                <p class="book-container__resumen"><span>Resumen: </span>Un relato corto poético y filosófico que, a través de la historia de un pequeño príncipe que viaja por diferentes planetas, ofrece profundas lecciones sobre la vida, el amor, la amistad y la soledad.</p>
-                <p class="book-container__price"><span>Precio: </span>$10</p>
-                <p class="book-container__author"><span>Autor: </span>Antoine de Saint-Exupéry</p>
-                <p class="book-container__genre"><span>Género: </span>Relato filosófico</p>
-            </article>
-
-            <article class="book-container">
-                <h3 class="book-container__title"> El principito </h3>
-                <div class="book-container__div">
-                    <img class="book-container__image" src="./assets/images/el_alquimista.jpg" alt="Portada del libro el principito" width="200">
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item"><span>Precio: </span>$10</li>
+                    <li class="list-group-item"><span>Autor: </span>Antoine de Saint-Exupéry</li>
+                    <li class="list-group-item"><span>Género: </span>Relato filosófico</li>
+                </ul>
+                <div class="card-body">
+                    <a href="#" class="card-link">Card link</a>
+                    <a href="#" class="card-link">Another link</a>
                 </div>
-                <p class="book-container__resumen"><span>Resumen: </span>Un relato corto poético y filosófico que, a través de la historia de un pequeño príncipe que viaja por diferentes planetas, ofrece profundas lecciones sobre la vida, el amor, la amistad y la soledad.</p>
-                <p class="book-container__price"><span>Precio: </span>$10</p>
-                <p class="book-container__author"><span>Autor: </span>Antoine de Saint-Exupéry</p>
-                <p class="book-container__genre"><span>Género: </span>Relato filosófico</p>
             </article>
-
-            <article class="book-container">
-                <h3 class="book-container__title"> El principito </h3>
-                <div class="book-container__div">
-                    <img class="book-container__image" src="./assets/images/el_alquimista.jpg" alt="Portada del libro el principito" width="200">
+            <article class="book-container card col-12 col-sm-6 col-lg-4 mb-3 mx-3 text-md-start">
+                <img src="./assets/images/el_alquimista.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">El principito</h5>
+                    <p class="card-text">
+                        Un relato corto poético y filosófico que, a través de la historia de un pequeño príncipe que viaja por diferentes planetas, ofrece profundas lecciones sobre la vida, el amor, la amistad y la soledad.
+                    </p>
                 </div>
-                <p class="book-container__resumen"><span>Resumen: </span>Un relato corto poético y filosófico que, a través de la historia de un pequeño príncipe que viaja por diferentes planetas, ofrece profundas lecciones sobre la vida, el amor, la amistad y la soledad.</p>
-                <p class="book-container__price"><span>Precio: </span>$10</p>
-                <p class="book-container__author"><span>Autor: </span>Antoine de Saint-Exupéry</p>
-                <p class="book-container__genre"><span>Género: </span>Relato filosófico</p>
-            </article>
-
-            <article class="book-container">
-                <h3 class="book-container__title"> El principito </h3>
-                <div class="book-container__div">
-                    <img class="book-container__image" src="./assets/images/el_alquimista.jpg" alt="Portada del libro el principito" width="200">
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item"><span>Precio: </span>$10</li>
+                    <li class="list-group-item"><span>Autor: </span>Antoine de Saint-Exupéry</li>
+                    <li class="list-group-item"><span>Género: </span>Relato filosófico</li>
+                </ul>
+                <div class="card-body">
+                    <a href="#" class="card-link">Card link</a>
+                    <a href="#" class="card-link">Another link</a>
                 </div>
-                <p class="book-container__resumen"><span>Resumen: </span>Un relato corto poético y filosófico que, a través de la historia de un pequeño príncipe que viaja por diferentes planetas, ofrece profundas lecciones sobre la vida, el amor, la amistad y la soledad.</p>
-                <p class="book-container__price"><span>Precio: </span>$10</p>
-                <p class="book-container__author"><span>Autor: </span>Antoine de Saint-Exupéry</p>
-                <p class="book-container__genre"><span>Género: </span>Relato filosófico</p>
             </article>
-
-            <article class="book-container">
-                <h3 class="book-container__title"> El principito </h3>
-                <div class="book-container__div">
-                    <img class="book-container__image" src="./assets/images/el_alquimista.jpg" alt="Portada del libro el principito" width="200">
+            <article class="book-container card col-12 col-sm-6 col-lg-4 mb-3 mx-3 text-md-start">
+                <img src="./assets/images/el_alquimista.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">El principito</h5>
+                    <p class="card-text">
+                        Un relato corto poético y filosófico que, a través de la historia de un pequeño príncipe que viaja por diferentes planetas, ofrece profundas lecciones sobre la vida, el amor, la amistad y la soledad.
+                    </p>
                 </div>
-                <p class="book-container__resumen"><span>Resumen: </span>Un relato corto poético y filosófico que, a través de la historia de un pequeño príncipe que viaja por diferentes planetas, ofrece profundas lecciones sobre la vida, el amor, la amistad y la soledad.</p>
-                <p class="book-container__price"><span>Precio: </span>$10</p>
-                <p class="book-container__author"><span>Autor: </span>Antoine de Saint-Exupéry</p>
-                <p class="book-container__genre"><span>Género: </span>Relato filosófico</p>
-            </article>
-
-            <article class="book-container">
-                <h3 class="book-container__title"> El principito </h3>
-                <div class="book-container__div">
-                    <img class="book-container__image" src="./assets/images/el_alquimista.jpg" alt="Portada del libro el principito" width="200">
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item"><span>Precio: </span>$10</li>
+                    <li class="list-group-item"><span>Autor: </span>Antoine de Saint-Exupéry</li>
+                    <li class="list-group-item"><span>Género: </span>Relato filosófico</li>
+                </ul>
+                <div class="card-body">
+                    <a href="#" class="card-link">Card link</a>
+                    <a href="#" class="card-link">Another link</a>
                 </div>
-                <p class="book-container__resumen"><span>Resumen: </span>Un relato corto poético y filosófico que, a través de la historia de un pequeño príncipe que viaja por diferentes planetas, ofrece profundas lecciones sobre la vida, el amor, la amistad y la soledad.</p>
-                <p class="book-container__price"><span>Precio: </span>$10</p>
-                <p class="book-container__author"><span>Autor: </span>Antoine de Saint-Exupéry</p>
-                <p class="book-container__genre"><span>Género: </span>Relato filosófico</p>
             </article>
-
-            <article class="book-container">
-                <h3 class="book-container__title"> El principito </h3>
-                <div class="book-container__div">
-                    <img class="book-container__image" src="./assets/images/el_alquimista.jpg" alt="Portada del libro el principito" width="200">
+            <article class="book-container card col-12 col-sm-6 col-lg-4 mb-3 mx-3 text-md-start">
+                <img src="./assets/images/el_alquimista.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">El principito</h5>
+                    <p class="card-text">
+                        Un relato corto poético y filosófico que, a través de la historia de un pequeño príncipe que viaja por diferentes planetas, ofrece profundas lecciones sobre la vida, el amor, la amistad y la soledad.
+                    </p>
                 </div>
-                <p class="book-container__resumen"><span>Resumen: </span>Un relato corto poético y filosófico que, a través de la historia de un pequeño príncipe que viaja por diferentes planetas, ofrece profundas lecciones sobre la vida, el amor, la amistad y la soledad.</p>
-                <p class="book-container__price"><span>Precio: </span>$10</p>
-                <p class="book-container__author"><span>Autor: </span>Antoine de Saint-Exupéry</p>
-                <p class="book-container__genre"><span>Género: </span>Relato filosófico</p>
-            </article>
-
-            <article class="book-container">
-                <h3 class="book-container__title"> El principito </h3>
-                <div class="book-container__div">
-                    <img class="book-container__image" src="./assets/images/el_alquimista.jpg" alt="Portada del libro el principito" width="200">
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item"><span>Precio: </span>$10</li>
+                    <li class="list-group-item"><span>Autor: </span>Antoine de Saint-Exupéry</li>
+                    <li class="list-group-item"><span>Género: </span>Relato filosófico</li>
+                </ul>
+                <div class="card-body">
+                    <a href="#" class="card-link">Card link</a>
+                    <a href="#" class="card-link">Another link</a>
                 </div>
-                <p class="book-container__resumen"><span>Resumen: </span>Un relato corto poético y filosófico que, a través de la historia de un pequeño príncipe que viaja por diferentes planetas, ofrece profundas lecciones sobre la vida, el amor, la amistad y la soledad.</p>
-                <p class="book-container__price"><span>Precio: </span>$10</p>
-                <p class="book-container__author"><span>Autor: </span>Antoine de Saint-Exupéry</p>
-                <p class="book-container__genre"><span>Género: </span>Relato filosófico</p>
             </article>
-
-            <article class="book-container">
-                <h3 class="book-container__title"> El principito </h3>
-                <div class="book-container__div">
-                    <img class="book-container__image" src="./assets/images/el_alquimista.jpg" alt="Portada del libro el principito" width="200">
-                </div>
-                <p class="book-container__resumen"><span>Resumen: </span>Un relato corto poético y filosófico que, a través de la historia de un pequeño príncipe que viaja por diferentes planetas, ofrece profundas lecciones sobre la vida, el amor, la amistad y la soledad.</p>
-                <p class="book-container__price"><span>Precio: </span>$10</p>
-                <p class="book-container__author"><span>Autor: </span>Antoine de Saint-Exupéry</p>
-                <p class="book-container__genre"><span>Género: </span>Relato filosófico</p>
-            </article>
-
+           
 
 
 
@@ -153,5 +118,7 @@
     <footer>
 
     </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
 </body>
 </html>
