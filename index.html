@@ -9,8 +9,17 @@
     <link rel="stylesheet" href="./assets/css/style.css">
 </head>
 <body class="container">
-    <header>
 
+    <header>
+<nav class="d-flex w-50 justify-content-between">
+    <a href="#">Inicio</a>
+    <div class="vr"></div>
+    <a href="#">Nosotros</a>
+    <div class="vr"></div>
+    <a href="#">Noticias</a>
+    <div class="vr"></div>
+    <a href="#">Libros</a>
+</nav>
 
 
         <h1>Bookstore</h1>
@@ -21,91 +30,10 @@
         <section class="main-section row justify-content-center text-center">
             <h2 class="w-100">Listado completo de libros</h2>
             <hr class="mb-5 mx-auto w-75">
-<!-- 
-            <article class="book-container col-12 col-sm-6 col-lg-4">
-                <h3 class="book-container__title"> El principito </h3>
-                <div class="book-container__div">
-                    <img class="book-container__image" src="./assets/images/el_alquimista.jpg" alt="Portada del libro el principito" width="200">
-                </div>
-                <p class="book-container__resumen"><span>Resumen: </span>Un relato corto poético y filosófico que, a través de la historia de un pequeño príncipe que viaja por diferentes planetas, ofrece profundas lecciones sobre la vida, el amor, la amistad y la soledad.</p>
-                <p class="book-container__price"><span>Precio: </span>$10</p>
-                <p class="book-container__author"><span>Autor: </span>Antoine de Saint-Exupéry</p>
-                <p class="book-container__genre"><span>Género: </span>Relato filosófico</p>
-            </article> -->
+
+            <div id="contenedor" class="contenedor d-flex flex-wrap">
             
-            <article class="book-container card col-12 col-sm-6 col-lg-4 mb-3 mx-3 text-md-start">
-                <img src="./assets/images/el_alquimista.jpg" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">El principito</h5>
-                    <p class="card-text">
-                        Un relato corto poético y filosófico que, a través de la historia de un pequeño príncipe que viaja por diferentes planetas, ofrece profundas lecciones sobre la vida, el amor, la amistad y la soledad.
-                    </p>
-                </div>
-                <ul class="list-group list-group-flush">
-                    <li class="list-group-item"><span>Precio: </span>$10</li>
-                    <li class="list-group-item"><span>Autor: </span>Antoine de Saint-Exupéry</li>
-                    <li class="list-group-item"><span>Género: </span>Relato filosófico</li>
-                </ul>
-                <div class="card-body">
-                    <a href="#" class="card-link">Card link</a>
-                    <a href="#" class="card-link">Another link</a>
-                </div>
-            </article>
-            <article class="book-container card col-12 col-sm-6 col-lg-4 mb-3 mx-3 text-md-start">
-                <img src="./assets/images/el_alquimista.jpg" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">El principito</h5>
-                    <p class="card-text">
-                        Un relato corto poético y filosófico que, a través de la historia de un pequeño príncipe que viaja por diferentes planetas, ofrece profundas lecciones sobre la vida, el amor, la amistad y la soledad.
-                    </p>
-                </div>
-                <ul class="list-group list-group-flush">
-                    <li class="list-group-item"><span>Precio: </span>$10</li>
-                    <li class="list-group-item"><span>Autor: </span>Antoine de Saint-Exupéry</li>
-                    <li class="list-group-item"><span>Género: </span>Relato filosófico</li>
-                </ul>
-                <div class="card-body">
-                    <a href="#" class="card-link">Card link</a>
-                    <a href="#" class="card-link">Another link</a>
-                </div>
-            </article>
-            <article class="book-container card col-12 col-sm-6 col-lg-4 mb-3 mx-3 text-md-start">
-                <img src="./assets/images/el_alquimista.jpg" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">El principito</h5>
-                    <p class="card-text">
-                        Un relato corto poético y filosófico que, a través de la historia de un pequeño príncipe que viaja por diferentes planetas, ofrece profundas lecciones sobre la vida, el amor, la amistad y la soledad.
-                    </p>
-                </div>
-                <ul class="list-group list-group-flush">
-                    <li class="list-group-item"><span>Precio: </span>$10</li>
-                    <li class="list-group-item"><span>Autor: </span>Antoine de Saint-Exupéry</li>
-                    <li class="list-group-item"><span>Género: </span>Relato filosófico</li>
-                </ul>
-                <div class="card-body">
-                    <a href="#" class="card-link">Card link</a>
-                    <a href="#" class="card-link">Another link</a>
-                </div>
-            </article>
-            <article class="book-container card col-12 col-sm-6 col-lg-4 mb-3 mx-3 text-md-start">
-                <img src="./assets/images/el_alquimista.jpg" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">El principito</h5>
-                    <p class="card-text">
-                        Un relato corto poético y filosófico que, a través de la historia de un pequeño príncipe que viaja por diferentes planetas, ofrece profundas lecciones sobre la vida, el amor, la amistad y la soledad.
-                    </p>
-                </div>
-                <ul class="list-group list-group-flush">
-                    <li class="list-group-item"><span>Precio: </span>$10</li>
-                    <li class="list-group-item"><span>Autor: </span>Antoine de Saint-Exupéry</li>
-                    <li class="list-group-item"><span>Género: </span>Relato filosófico</li>
-                </ul>
-                <div class="card-body">
-                    <a href="#" class="card-link">Card link</a>
-                    <a href="#" class="card-link">Another link</a>
-                </div>
-            </article>
-           
+            </div>
 
 
 
@@ -120,5 +48,6 @@
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    <script src="./assets/js/app.js"></script>
 </body>
 </html>

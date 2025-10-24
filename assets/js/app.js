@@ -1,0 +1,128 @@
+// var, let, const
+// "cadenas", 'cadenas', `cadenas ${variable}`
+// boleanos: true, false
+// 2, 2.1, -2, 2.5
+// null, undefined, NaN
+// nombre_funcion()=>{}, function()
+// new Set, new Map, Array [], Object {}, [...new Set(valores_repetidos)],
+// ciclos for, while, for...of, for...in
+// if, else if, else, switch
+// try, catch, finally
+// find, filter, map, reduce
+
+
+const contenedor = document.querySelector("#contenedor")
+
+
+console.log("contenedor", contenedor);
+
+libros = [
+  {
+    "titulo": "Cien años de soledad",
+    "autor": "Gabriel García Márquez",
+    "genero": "Realismo Mágico",
+    "precio": 14.99,
+    "resumen": "Narra la historia de siete generaciones de la familia Buendía en el pueblo ficticio de Macondo, explorando temas de soledad, destino e incesto.",
+    "imagen": "imagen_cien_años_soledad.jpg"
+  },
+  {
+    "titulo": "1984",
+    "autor": "George Orwell",
+    "genero": "Distopía",
+    "precio": 10.50,
+    "resumen": "Ambientada en un futuro donde el 'Partido' y el 'Gran Hermano' ejercen un control totalitario sobre la vida de los ciudadanos, vigilando incluso sus pensamientos.",
+    "imagen": "imagen_1984.jpg"
+  },
+  {
+    "titulo": "Orgullo y prejuicio",
+    "autor": "Jane Austen",
+    "genero": "Romance Clásico",
+    "precio": 8.75,
+    "resumen": "Sigue la historia de Elizabeth Bennet y su relación con el orgulloso Sr. Darcy, explorando temas de moralidad, educación y matrimonio en la Inglaterra del siglo XIX.",
+    "imagen": "imagen_orgullo_y_prejuicio.jpg"
+  },
+  {
+    "titulo": "El Principito",
+    "autor": "Antoine de Saint-Exupéry",
+    "genero": "Ficción Infantil/Filosofía",
+    "precio": 7.20,
+    "resumen": "Un piloto varado en el desierto se encuentra con un pequeño príncipe de otro planeta que le enseña lecciones sobre la amistad, el amor y el sentido de la vida.",
+    "imagen": "imagen_el_principito.jpg"
+  },
+  {
+    "titulo": "Asesinato en el Orient Express",
+    "autor": "Agatha Christie",
+    "genero": "Misterio/Policíaca",
+    "precio": 9.95,
+    "resumen": "El detective Hércules Poirot debe resolver el asesinato de un hombre a bordo del lujoso tren Orient Express, atrapado por la nieve.",
+    "imagen": "imagen_asesinato_orient_express.jpg"
+  },
+  {
+    "titulo": "Don Quijote de la Mancha",
+    "autor": "Miguel de Cervantes",
+    "genero": "Novela de Aventuras/Sátira",
+    "precio": 18.00,
+    "resumen": "Un hidalgo enloquece leyendo libros de caballerías y decide convertirse en un caballero andante para restaurar la justicia en el mundo, acompañado por su escudero Sancho Panza.",
+    "imagen": "imagen_don_quijote.jpg"
+  },
+  {
+    "titulo": "Sapiens: De animales a dioses",
+    "autor": "Yuval Noah Harari",
+    "genero": "Historia/No Ficción",
+    "precio": 16.50,
+    "resumen": "Un recorrido por la historia de la humanidad, desde la evolución de los primeros humanos hasta las revoluciones cognitivas, agrícolas y científicas que moldearon nuestro mundo.",
+    "imagen": "imagen_sapiens.jpg"
+  },
+  {
+    "titulo": "Harry Potter y la Piedra Filosofal",
+    "autor": "J.K. Rowling",
+    "genero": "Fantasía Juvenil",
+    "precio": 12.80,
+    "resumen": "Harry Potter descubre que es un mago y comienza su primer año en el Colegio Hogwarts de Magia y Hechicería, donde hace amigos y se enfrenta al malvado Lord Voldemort.",
+    "imagen": "imagen_harry_potter_piedra_filosofal.jpg"
+  },
+  {
+    "titulo": "Crimen y castigo",
+    "autor": "Fiódor Dostoievski",
+    "genero": "Novela Psicológica",
+    "precio": 11.25,
+    "resumen": "El estudiante Raskólnikov planea y ejecuta el asesinato de una vieja prestamista en San Petersburgo y luego lidia con las consecuencias morales y psicológicas de su acto.",
+    "imagen": "imagen_crimen_y_castigo.jpg"
+  },
+  {
+    "titulo": "Rayuela",
+    "autor": "Julio Cortázar",
+    "genero": "Novela Experimental",
+    "precio": 13.50,
+    "resumen": "Una 'antinovela' que puede leerse de forma lineal o siguiendo un 'Tablero de Dirección'. Explora la vida bohemia de Horacio Oliveira en París y Buenos Aires.",
+    "imagen": "imagen_rayuela.jpg"
+  }
+]
+
+libros.forEach((libro, index) => {
+    console.log(libro);
+    contenedor.innerHTML += `
+                <article class="book-container card col-12 col-sm-6 col-lg-4 mb-3 mx-3 text-md-start">
+                <img src="./assets/images/el_alquimista.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">${ libro.titulo }</h5>
+                    <p class="card-text">
+                        ${ libro.resumen }
+                    </p>
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item"><span>Precio: </span>$${libro.precio}</li>
+                    <li class="list-group-item"><span>Autor: </span>${ libro.autor }</li>
+                    <li class="list-group-item"><span>Género: </span>${ libro.genero }</li>
+                </ul>
+                <div class="card-body">
+                    <a href="#" class="card-link">Card link</a>
+                    <a href="#" class="card-link">Another link</a>
+                </div>
+            </article>
+    `
+}
+)
+;
+
+
