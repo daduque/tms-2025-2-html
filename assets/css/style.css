@@ -18,6 +18,12 @@ article.book-container.card{
     max-width: 300px;
 }
 
+article img{
+
+    height: 200px;
+    object-fit: contain;
+}
+
 
 @media (min-width: 576px) { 
     

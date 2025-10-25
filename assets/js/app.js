@@ -23,7 +23,7 @@ libros = [
     "genero": "Realismo Mágico",
     "precio": 14.99,
     "resumen": "Narra la historia de siete generaciones de la familia Buendía en el pueblo ficticio de Macondo, explorando temas de soledad, destino e incesto.",
-    "imagen": "imagen_cien_años_soledad.jpg"
+    "imagen": "cien_años_soledad.jpg"
   },
   {
     "titulo": "1984",
@@ -31,7 +31,7 @@ libros = [
     "genero": "Distopía",
     "precio": 10.50,
     "resumen": "Ambientada en un futuro donde el 'Partido' y el 'Gran Hermano' ejercen un control totalitario sobre la vida de los ciudadanos, vigilando incluso sus pensamientos.",
-    "imagen": "imagen_1984.jpg"
+    "imagen": "1984.jpg"
   },
   {
     "titulo": "Orgullo y prejuicio",
@@ -39,7 +39,7 @@ libros = [
     "genero": "Romance Clásico",
     "precio": 8.75,
     "resumen": "Sigue la historia de Elizabeth Bennet y su relación con el orgulloso Sr. Darcy, explorando temas de moralidad, educación y matrimonio en la Inglaterra del siglo XIX.",
-    "imagen": "imagen_orgullo_y_prejuicio.jpg"
+    "imagen": "orgullo_y_prejuicio.jpg"
   },
   {
     "titulo": "El Principito",
@@ -47,7 +47,7 @@ libros = [
     "genero": "Ficción Infantil/Filosofía",
     "precio": 7.20,
     "resumen": "Un piloto varado en el desierto se encuentra con un pequeño príncipe de otro planeta que le enseña lecciones sobre la amistad, el amor y el sentido de la vida.",
-    "imagen": "imagen_el_principito.jpg"
+    "imagen": "el_principito.jpg"
   },
   {
     "titulo": "Asesinato en el Orient Express",
@@ -55,7 +55,7 @@ libros = [
     "genero": "Misterio/Policíaca",
     "precio": 9.95,
     "resumen": "El detective Hércules Poirot debe resolver el asesinato de un hombre a bordo del lujoso tren Orient Express, atrapado por la nieve.",
-    "imagen": "imagen_asesinato_orient_express.jpg"
+    "imagen": "asesinato_orient_express.jpg"
   },
   {
     "titulo": "Don Quijote de la Mancha",
@@ -63,7 +63,7 @@ libros = [
     "genero": "Novela de Aventuras/Sátira",
     "precio": 18.00,
     "resumen": "Un hidalgo enloquece leyendo libros de caballerías y decide convertirse en un caballero andante para restaurar la justicia en el mundo, acompañado por su escudero Sancho Panza.",
-    "imagen": "imagen_don_quijote.jpg"
+    "imagen": "don_quijote.jpg"
   },
   {
     "titulo": "Sapiens: De animales a dioses",
@@ -71,7 +71,7 @@ libros = [
     "genero": "Historia/No Ficción",
     "precio": 16.50,
     "resumen": "Un recorrido por la historia de la humanidad, desde la evolución de los primeros humanos hasta las revoluciones cognitivas, agrícolas y científicas que moldearon nuestro mundo.",
-    "imagen": "imagen_sapiens.jpg"
+    "imagen": "sapiens.jpg"
   },
   {
     "titulo": "Harry Potter y la Piedra Filosofal",
@@ -79,7 +79,7 @@ libros = [
     "genero": "Fantasía Juvenil",
     "precio": 12.80,
     "resumen": "Harry Potter descubre que es un mago y comienza su primer año en el Colegio Hogwarts de Magia y Hechicería, donde hace amigos y se enfrenta al malvado Lord Voldemort.",
-    "imagen": "imagen_harry_potter_piedra_filosofal.jpg"
+    "imagen": "harry_potter_piedra_filosofal.jpg"
   },
   {
     "titulo": "Crimen y castigo",
@@ -87,7 +87,7 @@ libros = [
     "genero": "Novela Psicológica",
     "precio": 11.25,
     "resumen": "El estudiante Raskólnikov planea y ejecuta el asesinato de una vieja prestamista en San Petersburgo y luego lidia con las consecuencias morales y psicológicas de su acto.",
-    "imagen": "imagen_crimen_y_castigo.jpg"
+    "imagen": "crimen_y_castigo.jpg"
   },
   {
     "titulo": "Rayuela",
@@ -95,15 +95,30 @@ libros = [
     "genero": "Novela Experimental",
     "precio": 13.50,
     "resumen": "Una 'antinovela' que puede leerse de forma lineal o siguiendo un 'Tablero de Dirección'. Explora la vida bohemia de Horacio Oliveira en París y Buenos Aires.",
-    "imagen": "imagen_rayuela.jpg"
+    "imagen": "rayuela.jpg"
   }
 ]
 
-libros.forEach((libro, index) => {
-    console.log(libro);
+//map, find, filter
+// return explícito, implícito
+const libros_under_10 = libros.filter((libro, index) => { return libro.precio <= 10 })
+// console.log(libros_under_10);
+
+const libros_find = libros.find((libro, index) => { return libro.titulo === "Don Quijote de la Mancha" })
+// console.log("libros_find", libros_find);
+
+const TRM = 3900
+
+const libros_pesos= libros.map((libro, index) => { return {...libro, precio: libro.precio * TRM  }})
+console.log(libros_pesos);
+
+const drawBooks = (libros) => {
+  contenedor.innerHTML = ""
+  libros.forEach((libro, index) => {
+    // console.log(libro);
     contenedor.innerHTML += `
                 <article class="book-container card col-12 col-sm-6 col-lg-4 mb-3 mx-3 text-md-start">
-                <img src="./assets/images/el_alquimista.jpg" class="card-img-top" alt="...">
+                <img src="./assets/images/${ libro.imagen ? libro.imagen : 'el_alquimista.jpg' }" class="card-img-top" alt="...">
                 <div class="card-body">
                     <h5 class="card-title">${ libro.titulo }</h5>
                     <p class="card-text">
@@ -121,8 +136,24 @@ libros.forEach((libro, index) => {
                 </div>
             </article>
     `
+});
 }
-)
-;
 
 
+
+
+const btn_event = document.querySelector("#btn_event")
+const btn_clean = document.querySelector("#btn_clean")
+
+let number = 0
+btn_event.addEventListener("click", () => {
+  drawBooks(libros);
+})
+
+btn_clean.addEventListener("click", () => {
+  contenedor.innerHTML = `
+    <h2 class="text-muted">No hay libros disponibles</h2>
+  `
+})
+
+console.log(btn_event);
