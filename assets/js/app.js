@@ -35,7 +35,7 @@ libros = [
   },
   {
     "titulo": "Orgullo y prejuicio",
-    "autor": "Jane Austen",
+    "autor": "J.K. Rowling",
     "genero": "Romance Clásico",
     "precio": 8.75,
     "resumen": "Sigue la historia de Elizabeth Bennet y su relación con el orgulloso Sr. Darcy, explorando temas de moralidad, educación y matrimonio en la Inglaterra del siglo XIX.",
@@ -43,7 +43,7 @@ libros = [
   },
   {
     "titulo": "El Principito",
-    "autor": "Antoine de Saint-Exupéry",
+    "autor": "J.K. Rowling",
     "genero": "Ficción Infantil/Filosofía",
     "precio": 7.20,
     "resumen": "Un piloto varado en el desierto se encuentra con un pequeño príncipe de otro planeta que le enseña lecciones sobre la amistad, el amor y el sentido de la vida.",
@@ -157,3 +157,24 @@ btn_clean.addEventListener("click", () => {
 })
 
 console.log(btn_event);
+
+
+const formulario_buscar = document.querySelector("#formulario_buscar")
+
+formulario_buscar.addEventListener('submit', (event) => {
+  event.preventDefault();
+  const buscarInput = formulario_buscar[0].value.toLowerCase();
+  const libros_encontrados = libros.filter((libro, index) => { return libro.autor.toLowerCase().includes(buscarInput) })
+  console.log(libros_encontrados);
+  drawBooks(libros_encontrados)
+
+  
+  //formulario_buscar[0].value = ""
+  
+  
+  
+  
+  console.log(event);
+  
+})
+formulario_buscar[1].disabled = false;
