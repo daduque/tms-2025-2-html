@@ -99,6 +99,29 @@ libros = [
   }
 ]
 
+document.addEventListener("DOMContentLoaded", () => {
+  if (!sessionStorage.getItem("listado_libros")) {
+    fetch("assets/json/data.json")
+      .then(response => response.json())
+      .then(data => {
+        drawBooks(data)
+
+        const libros_serializado = JSON.stringify(data)
+        sessionStorage.setItem("listado_libros", libros_serializado);
+        console.log("Datos guardados");
+      })
+      .catch(error => console.error('Error al cargar el archivo JSON:', error));
+  } else {
+    const libros_from_storage = JSON.parse(sessionStorage.getItem("listado_libros"))
+    drawBooks(libros_from_storage)
+    console.log("Datos existentes");
+  }
+
+
+
+
+})
+
 //map, find, filter
 // return explícito, implícito
 const libros_under_10 = libros.filter((libro, index) => { return libro.precio <= 10 })
@@ -109,7 +132,7 @@ const libros_find = libros.find((libro, index) => { return libro.titulo === "Don
 
 const TRM = 3900
 
-const libros_pesos= libros.map((libro, index) => { return {...libro, precio: libro.precio * TRM  }})
+const libros_pesos = libros.map((libro, index) => { return { ...libro, precio: libro.precio * TRM } })
 console.log(libros_pesos);
 
 const drawBooks = (libros) => {
@@ -118,17 +141,17 @@ const drawBooks = (libros) => {
     // console.log(libro);
     contenedor.innerHTML += `
                 <article class="book-container card col-12 col-sm-6 col-lg-4 mb-3 mx-3 text-md-start">
-                <img src="./assets/images/${ libro.imagen ? libro.imagen : 'el_alquimista.jpg' }" class="card-img-top" alt="...">
+                <img src="./assets/images/${libro.imagen ? libro.imagen : 'el_alquimista.jpg'}" class="card-img-top" alt="...">
                 <div class="card-body">
-                    <h5 class="card-title">${ libro.titulo }</h5>
+                    <h5 class="card-title">${libro.titulo}</h5>
                     <p class="card-text">
-                        ${ libro.resumen }
+                        ${libro.resumen}
                     </p>
                 </div>
                 <ul class="list-group list-group-flush">
                     <li class="list-group-item"><span>Precio: </span>$${libro.precio}</li>
-                    <li class="list-group-item"><span>Autor: </span>${ libro.autor }</li>
-                    <li class="list-group-item"><span>Género: </span>${ libro.genero }</li>
+                    <li class="list-group-item"><span>Autor: </span>${libro.autor}</li>
+                    <li class="list-group-item"><span>Género: </span>${libro.genero}</li>
                 </ul>
                 <div class="card-body">
                     <a href="#" class="card-link">Card link</a>
@@ -136,7 +159,7 @@ const drawBooks = (libros) => {
                 </div>
             </article>
     `
-});
+  });
 }
 
 
@@ -147,7 +170,16 @@ const btn_clean = document.querySelector("#btn_clean")
 
 let number = 0
 btn_event.addEventListener("click", () => {
-  drawBooks(libros);
+  // const libros_from_storage = JSON.parse(sessionStorage.getItem("alkosto"))
+  // libros_from_storage ? console.log("hay libros en el storage") : console.log("error");
+  //verificar si los libros existen en el storage con try/catch
+  try {
+    const libros_from_storage = JSON.parse(sessionStorage.getItem("listado_libros"))
+    drawBooks(libros_from_storage)
+  } catch (error) {
+    console.log(error);
+    drawBooks(libros);
+  }
 })
 
 btn_clean.addEventListener("click", () => {
@@ -164,17 +196,39 @@ const formulario_buscar = document.querySelector("#formulario_buscar")
 formulario_buscar.addEventListener('submit', (event) => {
   event.preventDefault();
   const buscarInput = formulario_buscar[0].value.toLowerCase();
-  const libros_encontrados = libros.filter((libro, index) => { return libro.autor.toLowerCase().includes(buscarInput) })
+  const libros_from_storage = JSON.parse(sessionStorage.getItem("listado_libros"))
+  const libros_encontrados = libros_from_storage.filter((libro, index) => { return libro.autor.toLowerCase().includes(buscarInput) })
   console.log(libros_encontrados);
   drawBooks(libros_encontrados)
 
-  
+
   //formulario_buscar[0].value = ""
-  
-  
-  
-  
+
+
   console.log(event);
-  
+
 })
-formulario_buscar[1].disabled = false;
+
+// solo habilitar el botón de búsqueda si tiene 3 o más caracteres
+const inputField = formulario_buscar[0]
+inputField.addEventListener("keyup", (event) => {
+  //if tradicional
+  if (inputField.value.length >= 3) {
+    formulario_buscar[1].disabled = false;
+  } else {
+    formulario_buscar[1].disabled = true;
+  }
+  //operador ternario
+  //inputField.value.length >= 3 ?  formulario_buscar[1].disabled = false : formulario_buscar[1].disabled = true;
+})
+
+// almacenamiento local (localStorage, sessionStorage)
+// const libros_serializado = JSON.stringify(libros)
+// sessionStorage.setItem("listado_libros", libros_serializado);
+
+// const libros_from_storage = JSON.parse(sessionStorage.getItem("listado_libros"))
+
+// console.log("libros_serializado", libros_serializado);
+// console.log("libros_from_storage", libros_from_storage);
+
+// fetch

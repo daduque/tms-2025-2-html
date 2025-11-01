@@ -26,22 +26,26 @@
         <p>Este es un sitio web de una tienda de libros, como ejercicio de HTML y CSS para TMS 2025-2</p>
     </header>
 
-    
 
-    <button id="btn_event" class="btn btn-success w-50">Cargar libros</button>
-    <button id="btn_clean" class="btn btn-danger w-50">Clean</button>
 
     <div class="my-5">
         <form id="formulario_buscar">
             <div class="mb-3">
 
                 <label for="buscar" class="form-label">Buscar</label>
-                <input type="text" class="form-control" id="buscarInput" aria-describedby="buscarHelp">
+                <input type="text" class="form-control" id="buscarInput" aria-describedby="buscarHelp" autocomplete="off">
                 <div id="emailHelp" class="form-text">Buscar un libro por autor, año, género o título</div>
             </div>
 
             <button type="submit" class="btn btn-primary" disabled>Buscar</button>
         </form>
+    </div>
+
+        
+    <div class="row align-content-center flex-column gap-3 my-5">
+
+        <button id="btn_event" class="btn btn-success w-25">Cargar libros</button>
+        <button id="btn_clean" class="btn btn-danger w-25">Clean</button>
     </div>
         
         <section class="main-section row justify-content-center text-center">
